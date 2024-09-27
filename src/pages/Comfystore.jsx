@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 
 function Comfystore() {
   const [card, setCard] = useState([]);
-
+  const [loader, setLoader] = useState(false);
   useEffect(function () {
+    setLoader(true);
     fetch("https://strapi-store-server.onrender.com/api/products", {
       method: "GET",
     })
@@ -17,11 +18,17 @@ function Comfystore() {
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
+      .finally(function(){
+        setLoader(false)
+      })
   }, []);
 
   return (
     <div className=" cont flex flex-wrap gap-10 pt-12 justify-center ">
+
+{loader && <p>Loading....</p>}
+
       {card.length > 0 &&
         card.map(function (value, index) {
           return (
@@ -31,7 +38,9 @@ function Comfystore() {
                 src={value.attributes.image}
                 alt=""
               />
-              <h1 className=" h3 text-center text-black ">{value.attributes.title}</h1>
+              <h1 className=" h3 text-center text-black ">
+                {value.attributes.title}
+              </h1>
               <p>{value.attributes.price} </p>
             </div>
           );
