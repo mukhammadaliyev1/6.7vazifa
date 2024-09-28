@@ -25,14 +25,14 @@ function Comfystore() {
   }, []);
 
   return (
-    <div className=" cont flex flex-wrap gap-10  justify-center bg-white  pt-32">
+    <div className=" cont flex flex-wrap gap-10  justify-center   pt-32">
       {loader &&  <img className="w-8"   src="gifloaded.gif" alt="" /> }
      
 
       {card.length > 0 &&
         card.map(function (value, index) {
           return (
-            <div className="card p-5 shadow-xl rounded-lg  hover:shadow-2xl transition duration-300 text-center">
+            <div className="card p-5 shadow-xl bg-white rounded-lg  hover:shadow-2xl transition duration-300 text-center">
               <img
                 className=" img  w-72 rounded-md h-48"
                 src={value.attributes.image}
