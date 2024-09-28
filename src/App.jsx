@@ -6,7 +6,7 @@ import Comfystore from "./pages/Comfystore";
 function App() {
   return (
     <div>
-      <div className="navbar bg-base-100  p-4 flex flex-wrap  gap-10  ">
+      <div className="navbar bg-base-100  p-4 flex flex-wrap  gap-10 fixed  ">
         <a className="btn btn-ghost text-xl mr-64 ml-24">Store</a>
         <button className="btn btn-smbtn btn-outline btn-accent">
           {" "}
@@ -22,7 +22,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Comfystore />} />
-
         <Route path="/galareya" element={<Galareya />} />
       </Routes>
     </div>

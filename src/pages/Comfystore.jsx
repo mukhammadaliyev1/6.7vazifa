@@ -19,15 +19,15 @@ function Comfystore() {
       .catch((err) => {
         console.log(err);
       })
-      .finally(function(){
-        setLoader(false)
-      })
+      .finally(function () {
+        setLoader(false);
+      });
   }, []);
 
   return (
-    <div className=" cont flex flex-wrap gap-10 pt-12 justify-center ">
-
-{loader && <p>Loading....</p>}
+    <div className=" cont flex flex-wrap gap-10  justify-center bg-white  pt-32">
+      {loader &&  <img className="w-8"   src="gifloaded.gif" alt="" /> }
+     
 
       {card.length > 0 &&
         card.map(function (value, index) {

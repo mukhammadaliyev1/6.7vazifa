@@ -27,20 +27,21 @@ const [loading, setLoading]=useState(false)
   }, []);
 
   return (
-    <div className="cont flex flex-wrap gap-10 pt-12 justify-center">
-    {loading && <p>Loading....</p>}
+    <div className="contx flex flex-wrap gap-10  justify-center bg-white pt-32">
+  
+      {loading &&  <img className="w-8"   src="gifloaded.gif" alt="" /> }
+     
 
 
       {album.length > 0 &&
         album.map(function (value, index) {
           return (
-            <div className="card p-5 shadow-xl rounded-lg  hover:shadow-2xl transition  text-center w-96">
+            <div  key={index} className="card p-5 shadow-xl rounded-lg  hover:shadow-2xl transition  text-center w-96 ">
               <ImageWithFallback
                 src={value.url}
                 fallbackSrc="https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg?size=626&ext=jpg"
                 alt="Tasvir"
               />
-
               <h1 className="text-black text-center bold mt-2">
                 {value.title}
               </h1>
